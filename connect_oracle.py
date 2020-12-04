@@ -16,8 +16,8 @@ connection = cx_Oracle.connect(
     "nyeacsc423", "Nya8971!", "lawtech.law.miami.edu/CSC_423")
 cursor = connection.cursor()
 cursor.execute("""
-     SELECT h.hireNo, h.clientNo, h.registrationNo, h.firstName, h.lastName, h.homeAddress, h.phoneNum, h.mileageBefore, h.hireStartDate, h.mileageAfter,h.hireEndDate,v.model,v.make,v.capacity
-FROM HireAgreements h, Vehicles v
+SELECT *
+FROM HireAgreement h, Vehicle v
 WHERE (h.registrationNo = v.registrationNo) AND (v.capacity > 5)
 """)
 # get column names from cursor
